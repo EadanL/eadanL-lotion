@@ -12,8 +12,8 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route element={<Layout />}>
-					<Route path="/" element={<Viewer />}></Route>
-					{/* <Route path="/" element={<Blank />}></Route> */}
+					{/* <Route path="/" element={<Viewer />}></Route> */}
+					<Route path="/" element={<Blank />}></Route>
 					<Route path="/edit" element={<Editor />}></Route>
 				</Route>
 			</Routes>
