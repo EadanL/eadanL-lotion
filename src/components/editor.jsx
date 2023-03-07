@@ -1,7 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Editor extends Component {
-	render() {
-		return <div id="note-container"></div>;
-	}
+export default function Editor() {
+	return <div id="note-container"></div>;
 }
