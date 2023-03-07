@@ -107,7 +107,7 @@ button:hover {
 }
 
 /* EDITOR */
-#editor-container {
+#note-container {
 	flex: 3;
 	border-left: solid 2px #eeeeee;
 	border-radius: 5px;
