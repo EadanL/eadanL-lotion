@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
 					<button>+</button>
 				</div>
 				<div id="sidebar-content">
-					<p>No notes yet</p>
+					<p id="empty-notes">No notes yet</p>
 				</div>
 			</div>
 		);
