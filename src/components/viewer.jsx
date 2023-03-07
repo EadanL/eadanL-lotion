@@ -8,7 +8,8 @@ export default class Viewer extends Component {
 					<div id="note-info">
 						<h2>{/* note title here */}Title</h2>
 						<p id="note-date">
-							Date{/* date of note creation here */}
+							Date
+							{/* date of note creation here */}
 						</p>
 					</div>
 					<div id="toolbar-buttons">
