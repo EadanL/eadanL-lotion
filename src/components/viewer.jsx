@@ -11,8 +11,10 @@ export default class Viewer extends Component {
 							Date{/* date of note creation here */}
 						</p>
 					</div>
-					<button id="edit-button">Edit</button>
-					<button id="delete-button">Delete</button>
+					<div id="toolbar-buttons">
+						<button id="edit-button">Edit</button>
+						<button id="delete-button">Delete</button>
+					</div>
 				</div>
 			</div>
 		);
