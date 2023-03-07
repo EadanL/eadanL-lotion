@@ -61,11 +61,17 @@ button:hover {
 }
 
 /* PAGE CONTENT */
-#content {
+#layout-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
+}
+
+#content {
+	flex: auto;
+	display: flex;
+	flex-direction: row;
 }
 
 /* SIDEBAR */
