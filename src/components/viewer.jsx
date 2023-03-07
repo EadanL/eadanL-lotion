@@ -6,8 +6,10 @@ export default class Viewer extends Component {
 			<div id="note-container">
 				<div id="toolbar">
 					<div id="note-info">
-						<h2>{/* note title here */}</h2>
-						<p id="note-date">{/* date of note creation here */}</p>
+						<h2>{/* note title here */}Title</h2>
+						<p id="note-date">
+							Date{/* date of note creation here */}
+						</p>
 					</div>
 					<button id="edit-button">Edit</button>
 					<button id="delete-button">Delete</button>
