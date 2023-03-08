@@ -22,7 +22,8 @@ h2 {
 	font-weight: 600;
 }
 
-button {
+button,
+#save-button {
 	border: none;
 	background: none;
 }
@@ -48,7 +49,8 @@ button {
 	font-size: 40px;
 }
 
-button:hover {
+button:hover,
+#save-button:hover {
 	cursor: pointer;
 	background-color: blueviolet;
 	color: white;
@@ -134,19 +136,30 @@ button:hover {
 }
 
 /* VIEWER */
-#toolbar {
+form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#view-tools,
+#note-head-container {
+	flex: auto;
 	display: flex;
 	justify-content: space-between;
 	border-bottom: solid 2px #eeeeee;
+	margin: 0;
 }
 
 #note-info {
-	flex: auto;
+	flex: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin: 15px 10px 10px 15px;
 }
 
+/* maybe remove this after editor is made */
 #note-info > h2 {
 	flex: 1;
 	padding: 15px 10px 5px 15px;
@@ -159,13 +172,73 @@ button:hover {
 	font-size: 75%;
 }
 
-#toolbar-buttons {
+#note-buttons {
 	display: inline-grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 }
 
-#toolbar-buttons > * {
+#note-buttons > * {
 	height: 100%;
 	padding: 0 10px;
+}
+
+/* #save-button {
+	background: none;
+	border: none;
+} */
+
+#note-title {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#note-title {
+	font-size: 26px;
+}
+
+#note-title:focus {
+	outline: none;
+}
+
+#date {
+	width: fit-content;
+	padding-top: 10px;
+	border: none;
+}
+
+/* TEXT EDITOR STYLES */
+#text-editor {
+	flex: auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.quill {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	flex: 1;
+}
+
+.ql-toolbar.ql-snow {
+	flex: 0;
+	border: none !important;
+	border-bottom: solid 2px #eeeeee !important;
+}
+
+#text-editor > div > div.ql-container.ql-snow {
+	border: 0;
+}
+
+#text-editor > div > div.ql-container.ql-snow > div.ql-editor > p {
+	font-weight: 400;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+	font-weight: 500;
+	color: gray;
 }
