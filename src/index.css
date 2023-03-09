@@ -123,7 +123,7 @@ button:hover,
   border-bottom: solid 2px #eeeeee;
 }
 
-#sidebar-note:hover {
+.sidebar-note:hover {
   background-color: #eeeeee;
 }
 

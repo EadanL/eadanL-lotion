@@ -59,7 +59,13 @@ function App() {
           <Route path="/:noteNumber"></Route>
           <Route
             path="/edit"
-            element={<Editor notes={notes} onDeleteNote={onDeleteNote} />}
+            element={
+              <Editor
+                notes={notes}
+                onDeleteNote={onDeleteNote}
+                activeNote={activeNote}
+              />
+            }
           ></Route>
         </Route>
       </Routes>
