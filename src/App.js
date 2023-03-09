@@ -11,6 +11,7 @@ import Viewer from "./components/viewer";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [activeNote, setActiveNote] = useState(false);
 
   const onAddNote = () => {
     const newNote = {
@@ -23,14 +24,29 @@ function App() {
     setNotes([newNote, ...notes]);
   };
 
-  const onDeleteNote = () => {};
+  const onDeleteNote = (idToDelete) => {
+    setNotes(notes.filter((note) => note.id !== idToDelete));
+  };
+
+  const getActiveNote = () => {
+    return notes.find((note) => note.id === activeNote);
+  };
 
   const { noteNumber } = useParams();
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout notes={notes} onAddNote={onAddNote} />}>
+        <Route
+          element={
+            <Layout
+              notes={notes}
+              onAddNote={onAddNote}
+              activeNote={activeNote}
+              setActiveNote={setActiveNote}
+            />
+          }
+        >
           {/* <Route path="/edit" element={<Viewer />}></Route> */}
           <Route
             path="/"
@@ -43,7 +59,7 @@ function App() {
           <Route path="/:noteNumber"></Route>
           <Route
             path="/edit"
-            element={<Editor onDeleteNote={onDeleteNote} />}
+            element={<Editor notes={notes} onDeleteNote={onDeleteNote} />}
           ></Route>
         </Route>
       </Routes>
