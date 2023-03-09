@@ -118,6 +118,24 @@ button:hover,
 	flex: 1;
 }
 
+#sidebar-note {
+	padding: 15px 10px;
+	border-bottom: solid 2px #eeeeee;
+}
+
+#sidebar-note:hover {
+	background-color: #eeeeee;
+}
+
+#sidebar-note-title {
+	padding: 0 0 8px 0;
+}
+
+#sidebar-note-title > small {
+	color: gray;
+	font-size: small;
+}
+
 /* BLANK */
 #empty-notes {
 	margin: 15px;
