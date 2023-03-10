@@ -30,7 +30,7 @@ export default function Editor({ notes, onDeleteNote, activeNote }) {
   return (
     <div id="note-container">
       {notes.map((note) => (
-        <form>
+        <div>
           <div id="note-head-container">
             <div id="note-info">
               <input
@@ -54,7 +54,7 @@ export default function Editor({ notes, onDeleteNote, activeNote }) {
           <div id="text-editor">
             <ReactQuill theme="snow" placeholder="Your note here" />
           </div>
-        </form>
+        </div>
       ))}
     </div>
   );
