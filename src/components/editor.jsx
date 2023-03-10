@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 export default function Editor({ notes, onDeleteNote, activeNote }) {
   const navigate = useNavigate();
