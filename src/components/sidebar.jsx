@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function Sidebar({
   visibility,
@@ -7,18 +9,29 @@ export default function Sidebar({
   activeNote,
   setActiveNote,
 }) {
+  const navigate = useNavigate();
+
+  const onNoteClick = (note) => {
+    setActiveNote(note);
+    navigate("/view");
+  };
+
+  const onPlusClick = () => {
+    onAddNote();
+    navigate("/edit");
+  };
+
   return (
     <div id="sidebar-container" className={visibility ? "" : "hidden"}>
       <div id="sidebar-header">
         <h2>Notes</h2>
-        <button onClick={onAddNote}>+</button>
+        <button onClick={onPlusClick}>+</button>
       </div>
       <div id="sidebar-content">
-        <p id="empty-notes">No notes yet</p>
         {notes.map((note) => (
           <div
             className={`sidebar-note ${note.id === activeNote && "active"}`}
-            onClick={() => setActiveNote(note.id)}
+            onClick={() => onNoteClick(note.id)}
           >
             <div id="sidebar-note-title">
               <h3>{note.title}</h3>

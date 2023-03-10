@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import uuid from "react-uuid";
 
@@ -10,8 +10,14 @@ import Editor from "./components/editor";
 import Viewer from "./components/viewer";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
   const [activeNote, setActiveNote] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   const onAddNote = () => {
     const newNote = {
@@ -30,7 +36,7 @@ function App() {
   };
 
   const getActiveNote = () => {
-    return notes.find((note) => note.id === activeNote);
+    return notes.find(({ id }) => id === activeNote);
   };
 
   const { noteNumber } = useParams();
@@ -48,7 +54,6 @@ function App() {
             />
           }
         >
-          {/* <Route path="/edit" element={<Viewer />}></Route> */}
           <Route
             path="/"
             element={
@@ -57,7 +62,16 @@ function App() {
               </div>
             }
           ></Route>
-          <Route path="/:noteNumber"></Route>
+          <Route
+            path="/view"
+            element={
+              <Viewer
+                notes={notes}
+                onDeleteNote={onDeleteNote}
+                activeNote={getActiveNote()}
+              />
+            }
+          ></Route>
           <Route
             path="/edit"
             element={

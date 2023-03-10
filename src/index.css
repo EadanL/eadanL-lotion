@@ -166,7 +166,11 @@ form {
   height: 100%;
 }
 
-#view-tools,
+#view-tools {
+  display: flex;
+  justify-content: space-between;
+}
+
 #note-head-container {
   flex: auto;
   display: flex;
