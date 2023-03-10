@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import uuid from "react-uuid";
 
-import Notes from "./components/notes";
-
 import Layout from "./components/layout";
 import Editor from "./components/editor";
 import Viewer from "./components/viewer";
@@ -38,8 +36,6 @@ function App() {
   const getActiveNote = () => {
     return notes.find(({ id }) => id === activeNote);
   };
-
-  const { noteNumber } = useParams();
 
   return (
     <BrowserRouter>
