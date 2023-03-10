@@ -22,6 +22,7 @@ function App() {
     };
 
     setNotes([newNote, ...notes]);
+    setActiveNote(newNote.id);
   };
 
   const onDeleteNote = (idToDelete) => {
@@ -63,7 +64,7 @@ function App() {
               <Editor
                 notes={notes}
                 onDeleteNote={onDeleteNote}
-                activeNote={activeNote}
+                activeNote={getActiveNote()}
               />
             }
           ></Route>
