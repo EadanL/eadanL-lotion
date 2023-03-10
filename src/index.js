@@ -6,23 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-/* site functionality code */
-/* document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("sidebar-menu").addEventListener("click", () => {
-		// TODO: show/hide sidebar
-		const sidebar = document.getElementById("sidebar-container");
-		if (sidebar.classList.contains("visible")) {
-			sidebar.classList.remove("visible");
-		} else {
-			sidebar.classList.add("visible");
-		}
-	});
-}); */
-
 root.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

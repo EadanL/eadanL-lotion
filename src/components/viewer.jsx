@@ -8,16 +8,12 @@ export default function Viewer({ notes, onDeleteNote, activeNote }) {
     <div id="note-container">
       <div id="view-tools">
         <div id="note-info">
-          <h2>{activeNote.title}</h2>
-          <input
-            id="date"
-            type="datetime-local"
-            defaultValue={activeNote.date}
-          />
+          <h2>title</h2>
+          <input id="date" type="datetime-local" />
         </div>
         <div id="note-buttons">
           <button onClick={() => navigate("/edit")}>Edit</button>
-          <button>Delete</button>
+          <button onClick={() => onDeleteNote(activeNote.id)}>Delete</button>
         </div>
       </div>
     </div>

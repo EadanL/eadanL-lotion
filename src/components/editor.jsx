@@ -18,7 +18,6 @@ export default function Editor({ notes, onDeleteNote, activeNote }) {
     const utcDate = new Date();
     const offset = utcDate.getTimezoneOffset();
     utcDate.setMinutes(utcDate.getMinutes() - Math.abs(offset));
-
     const date = utcDate.toISOString().slice(0, 16);
     return date;
   }
