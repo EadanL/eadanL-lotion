@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export default function Sidebar({
+  id,
   visibility,
   notes,
   onAddNote,

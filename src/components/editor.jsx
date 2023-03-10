@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export default function Editor({ notes, onDeleteNote, activeNote }) {
-  let { id } = useParams();
   const navigate = useNavigate();
 
   const [title, setTitle] = useState(() => {
